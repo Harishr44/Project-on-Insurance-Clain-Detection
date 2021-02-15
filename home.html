@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud check for Insurance Company</title>
+</head>
+
+<body>
+
+    
+     <div style="color:blue">
+       
+
+
+        <form action="\predict" method="post">
+                <h2>Insurance Check Whether Fraud or Genuine</h2>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Area of Service</h5>
+                               <!-- Area of Service -->
+                               <select name="Area_Service" id="Area_Service" required="required">
+                                   <option value="Hudson Valley">Hudson Valley</option>
+                                   <option value="Western NY">Western NY</option>
+                                   <option value="Central NY">Central NY</option>
+                                   <option value="Capital/Adirond">Capital/Adirond</option>
+                                   <option value="Finger Lakes">Finger Lakes</option>
+				                   <option value="New York City">New York City</option>
+                                   <option value="Southern Tier">Southern Tier</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Age</h5>
+                             <!-- Age  -->
+                             <select name="Age" id="Age" required="required">
+                                <option value="0 to 17">0 to 17</option>
+                                <option value="18 to 29">18 to 29</option>
+                                <option value="30 to 49">30 to 49</option>
+				                <option value="50 to 69">50 to 69</option>
+                                <option value="70 or Older">70 or Older</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body"> 	
+                            <h5 class="card-title">Gender</h5>
+                            <!-- Admission TYpe -->
+                            <select name="Gender" id="Gender" required="required">
+                                <option value="F">F</option>
+                                <option value="M">M</option>
+                                <option value="U">U</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	    <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Cultural Group</h5>
+                            <!-- Cultural Group -->
+                            <select name="Cultural_group" id="Cultural_group" required="required">
+                                <option value="White">White</option>
+                                <option value="Black/African American">Black/African American</option>
+                                <option value="Other Race">Other Race</option>
+                                <option value="Unknown">Unknown</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!--Ethnicity -->
+                            <h5 class="card-title">Ethnicity</h5>
+                            <select name="ethnicity" id="ethnicity" required="required">
+                                <option value="Not Span/Hispanic">Not Span/Hispanic</option>
+                                <option value="Spanish/Hispanic">Spanish/Hispanic</option>
+                                <option value="Unknown">Unknown</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+		        <div class="col-sm-6">
+                     <div class="card">
+                         <div class="card-body">
+                             <h5 class="card-title">Days Spend in the Hospital?</h5>
+                               <input id="first" name="Days_spend_hsptl" type="number " required="required">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	        <div class="col-sm-6">
+                       <div class="card">
+                           <div class="card-body">
+                             <h5 class="card-title">Admission Type</h5>
+                            <!-- Admission TYpe -->
+                            <select name="Admission_type" id="Admission_type" required="required">
+                                <option value="Emergency">Emergency</option>
+                                <option value="Elective">Elective</option>
+                                <option value="Urgent">Urgent</option>
+                                <option value="Newborn">Newborn</option>
+                                <option value="Trauma">Trauma</option>
+				                <option value="Not Available">Not Available</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Home or Self Care</h5>
+                         <!-- Home or Self Care -->
+                         <select name="home_self_care" id="home_self_care"  required="required">
+                             <option value="Home or Self Care">Home or Self Care</option>
+                             <option value="Home w/ Home Health Services">Home w/ Home Health Services</option>
+                             <option value="Skilled Nursing Home">Skilled Nursing Home</option>
+                             <option value="Expired">Expired</option>
+			                 <option value="Short-term Hospital">Short-term Hospital</option>
+                             <option value="Inpatient Rehabilitation Facility">Inpatient Rehabilitation Facility</option>
+                             <option value="Left Against Medical Advice">Left Against Medical Advice</option>
+			                 <option value="Psychiatric Hospital or Unit of Hosp">Psychiatric Hospital or Unit of Hosp</option>
+                             <option value="Hospice - Medical Facility">Hospice - Medical Facility</option>
+                             <option value="Hospice - Home">Hospice - Home</option>
+		                     <option value="Another Type Not Listed">Another Type Not Listed</option>
+                             <option value="Facility w/ Custodial/Supportive Care">Facility w/ Custodial/Supportive Care</option>
+                             <option value="Court/Law Enforcement">Court/Law Enforcement</option>
+			                 <option value="Medicare Cert Long Term Care Hospital">Medicare Cert Long Term Care Hospital</option>
+                             <option value="Cancer Center or Children's Hospital">Cancer Center or Children's Hospital</option>
+                             <option value="Hosp Basd Medicare Approved Swing Bed">Hosp Basd Medicare Approved Swing Bed</option>
+			                 <option value="Federal Health Care Facility">Federal Health Care Facility</option>
+                             <option value="Critical Access Hospital">Critical Access Hospital</option>
+                             <option value="Medicaid Cert Nursing Facility">Medicaid Cert Nursing Facility</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                 <div class="card">
+                     <div class="card-body">
+                         <h5 class="card-title">CCS Diagnosis Code</h5>
+                           <input id="second" name="ccs_diagnosis_code" type="number " required="required">
+                         </select>
+                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body"> 	
+                            <h5 class="card-title">CCS Procedure Code?</h5>
+                                 <input id="third" name="ccs_procedure_code" type="number " required="required">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	    <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Code_illness</h5>
+                             <!-- Code illness -->
+                             <select name="Code_illness" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                           <div class="card-body">
+                               <h5 class="card-title">Mortality Risk</h5>
+                            <!-- Mortality Risk -->
+                            <select name="mortality_risk" required="required">
+                                <option value="1.0">1.0</option>
+                                <option value="2.0">2.0</option>
+                                <option value="3.0">3.0</option>
+                                <option value="4.0">4.0</option>
+                               </select>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+	           <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body"> 	
+                            <h5 class="card-title">Surgical Description</h5>
+                            <!-- Surgical Description -->
+                            <select name="Surg_Description" id="Surg_Description" required="required">
+                                <option value="Medical">Medical</option>
+                                <option value="Surgical">Surgical</option>
+                                <option value="Not Applicable">Not Applicable</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	    <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Emergency Department</h5>
+                            <!-- Emergency Department -->
+                            <select name="emergency_dept_yes_no" id="emergency_dept_yes_no" required="required">
+                                <option value="Y">Y</option>
+                                <option value="N">N</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+               <div class="row">
+                   <div class="col-sm-6">
+                       <div class="card">
+                           <div class="card-body">
+                               <h5 class="card-title">Total Charge</h5>
+                               <input id="fourth" name="Tot_charg" type="number " required="required">
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+	           <br>
+               <br>
+               <br>
+
+               <div class="row">
+                   <div class="col-sm-6">
+                       <div class="card">
+                           <div class="card-body">
+                               <h5 class="card-title">Total Cost</h5>
+                               <input id="fifth" name="Tot_cost" type="number " required="required">
+                           </div>
+                       </div>
+                   </div>
+               </div>
+	       <div class="col-sm-6">
+                       <div class="card">
+                           <div class="card-body">
+                               <h5 class="card-title">Payment Typology</h5>
+                            <!-- Payment Typology -->
+                            <select name="Payment_Typology" id="Payment_Typology" required="required">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+				                <option value="5">5</option>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+
+
+
+               <br>
+               <br>
+               <br>
+               <br>
+               <!-- Submit -->
+               <input type="submit" value="Submit" class="btn btn-secondary">
+            </form>
+
+           <br>
+           <br>
+           <br>
+           <h3>{{ prediction_text }}</h3>
+
+           <br>
+           <br>
+           <p>©2021 Reshma Sultana</p>
+
+       </div>
+
+
+
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        #research {
+            font-size: 30px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 10px;
+            font-size: 20px;
+        }
+        
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size:30px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 30px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 30px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 30px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 30px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 30px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 30px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
